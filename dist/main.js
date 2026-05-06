@@ -1134,9 +1134,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_schedule_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/schedule.css */ "./src/styles/schedule.css");
 
 
-;
 
- 
+
 
 })();
 
