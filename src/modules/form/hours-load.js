@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
 import { openingHours } from "../../utils/opening-hours.js"
+import { hoursClick } from "./hours-click.js"
 
 const hoursList = document.getElementById("hours")
 
@@ -12,15 +13,31 @@ export function hoursLoad({ date }) {
       hour,
       available: !isHourPast,
     }
+
   })
 
-  hoursList.innerHTML = opening
-    .map(
-      ({ hour, available }) => `
+  const html = opening.map(({ hour, available }) => {
+    let block = ""
+
+    if (hour === "9:00") {
+      block += `<li class="hour-period">Morning</li>`
+    } else if (hour === "13:00") {
+      block += `<li class="hour-period">Afternoon</li>`
+    } else if (hour === "18:00") {
+      block += `<li class="hour-period">Evening</li>`
+    }
+
+    block += `
       <li value="${hour}" class="hour ${available ? "hour-available" : "hour-unavailable"}">
         ${hour}
       </li>
     `
-    )
-    .join("")
+    return block
+
+  })
+
+  hoursList.innerHTML = html.join("")
+
+  hoursClick()
+
 }
