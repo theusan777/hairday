@@ -1,3 +1,20 @@
 {
-  "schedules": []
+  "schedules": [
+    {
+      "id": "TPSnPEnNC3A",
+      "name": "Matheus",
+      "when": "2026-05-12 16:00"
+    },
+    {
+      "id": "iORQeS4Endw",
+      "name": "Matheus",
+      "when": "2026-05-12 16:00"
+    },
+    {
+      "id": "yHlzYupGkDg",
+      "name": "Matheus",
+      "when": "2026-05-12 16:00"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
