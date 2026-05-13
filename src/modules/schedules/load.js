@@ -7,8 +7,8 @@ export async function schedulesDay() {
 
   const date = selectedDate.value
 
-  const dailySchedules = await scheduleFetchByDay({ date })
+  const dailySchedules = await scheduleFetchByDay({ date }) || []
 
-  hoursLoad({ date })
+  hoursLoad({ date, dailySchedules })
   schedulesShow({ dailySchedules })
 }

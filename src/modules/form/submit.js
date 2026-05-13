@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
 
 import { schedulesNew } from "../../services/schedules-new.js"
+import { schedulesDay } from "../schedules/load.js"
 
 const form = document.querySelector("form")
 const clientName = document.getElementById("client")
@@ -35,7 +36,14 @@ form.onsubmit = async (event) => {
         const id = new Date().getTime()
         
         await schedulesNew({ id, name, when })
+        alert("Schedule created successfully!")
+
+        await schedulesDay()
+
+        clientName.value = ""   
+
     } catch (error) {
+        
         alert("Ops, something went wrong. Try again later.")
     }
 }
